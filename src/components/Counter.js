@@ -25,7 +25,7 @@ export default class Counter extends Component {
                 <button onClick={()=>onIncrement(index)}>
                     +
           </button>
-                <button onClick={()=>onIncrementAsync(index, 1)}>
+                <button onClick={()=>onIncrementAsync(index,1)}>
                     +1s
           </button>
                 <button onClick={()=>onDecrement(index)}>
