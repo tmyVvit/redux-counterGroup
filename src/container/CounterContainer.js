@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         onDecrement: (index) => dispatch(decrement(index)),
         onMultiple : (index, multiplier) => dispatch(multiple(index, multiplier)),
         onDivision : (index, divisor) => dispatch(division(index, divisor)),
+        onIncrementAsync:(index, timeout)=>setTimeout(()=>{dispatch(increment(index))},timeout*1000)
     }
 }
 

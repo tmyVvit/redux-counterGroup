@@ -17,13 +17,16 @@ export default class Counter extends Component {
             this.props.onDivision(this.props.index, divisor);
     }
     render() {
-        const { value, index, onIncrement, onDecrement} = this.props;
+        const { value, index, onIncrement, onDecrement, onIncrementAsync} = this.props;
         return (
             <p>
                 Clicked: {value} times
         {' '}
                 <button onClick={()=>onIncrement(index)}>
                     +
+          </button>
+                <button onClick={()=>onIncrementAsync(index, 1)}>
+                    +1s
           </button>
                 <button onClick={()=>onDecrement(index)}>
                     -
