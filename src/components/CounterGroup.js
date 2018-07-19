@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import Counter from './Counter'
+import Counter from '../container/CounterContainer'
 
 export default class CounterGroup extends Component {
 
   render() {
-    const {  size, value, onIncrement, onDecrement, onMultiply, onDivision} = this.props;
+    const {  size,} = this.props;
     let counterList = [];
     for(let i=0; i<size; i++) {
       counterList.push(
         <Counter
-          value={value}
           index={i}
-          onIncrement={onIncrement}
-          onDecrement={onDecrement}
-          onMultiply={onMultiply}
-          onDivision={onDivision}
           key={i}
         />
       );

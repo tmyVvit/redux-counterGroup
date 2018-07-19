@@ -1,26 +1,28 @@
+import * as type from '../constants/ActionTypes'
+
 export const increment = (index)=>{
     return {
         index,
-        type: "INCREMENT"
+        type: type.INCREMENT
     }
 }
 export const decrement = (index)=>{
     return {
         index,
-        type: "DECREMENT"
+        type: type.DECREMENT
     }
 }
 export const multiple = (index, multiplier)=>{
     return {
         index,
-        type: "MULTIPLE",
+        type: type.MULTIPLE,
         multiplier
     }
 }
 export const division = (index, divisor)=>{
     return {
         index,
-        type: "DIVISION",
+        type: type.DIVISION,
         divisor
     }
 }

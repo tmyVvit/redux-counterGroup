@@ -5,16 +5,10 @@ export default class Counter extends Component {
         super(props);
         this.inputNumber = React.createRef();
     }
-    increment = ()=>{
-        this.props.onIncrement(this.props.index);
-    }
-    decrement = ()=>{
-        this.props.onDecrement(this.props.index);
-    }
     multiply = (index) => {
         const multiplier =this.inputNumber.current.value;
         if (!isNaN(multiplier))
-            this.props.onMultiply(this.props.index, multiplier);
+            this.props.onMultiple(this.props.index, multiplier);
     }
 
     divide = () => {
@@ -23,18 +17,18 @@ export default class Counter extends Component {
             this.props.onDivision(this.props.index, divisor);
     }
     render() {
-        const { value, index} = this.props;
+        const { value, index, onIncrement, onDecrement} = this.props;
         return (
             <p>
-                Clicked: {value[index]} times
+                Clicked: {value} times
         {' '}
-                <button onClick={this.increment}>
+                <button onClick={()=>onIncrement(index)}>
                     +
           </button>
-                <button onClick={this.decrement}>
+                <button onClick={()=>onDecrement(index)}>
                     -
           </button>
-                <button onClick={(index)=>this.multiply(index)}>
+                <button onClick={this.multiply}>
                     *
           </button>
                 <button onClick={this.divide}>
